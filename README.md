@@ -8,6 +8,8 @@ Before running the application you will need a working PostgreSQL installation a
 
 Please open the `cmd/web/main.go` file and edit it to include your valid DSN as the default value.
 
+docker run -e POSTGRES_PASSWORD=secret -e POSTGRES_USER=myapp -v "$(pwd)"/data:/data  -e POSTGRES_DB=myapp -d -p 5432:5432 postgres:12
+
 ```
 cfg.db.dsn = env.GetString("DB_DSN", "YOUR DEFAULT DSN GOES HERE")
 ```
